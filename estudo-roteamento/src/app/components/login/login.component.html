@@ -1,0 +1,5 @@
+<div class="container">
+    <input [(ngModel)]="email" class="form-control mb-3" type="email" placeholder="digite seu email">
+    <input [(ngModel)]="senha"  class="form-control mb-3" type="password" placeholder="digite sua senha">
+    <button (click)="login()" [disabled]="!email || !senha" class="btn btn-primary">login</button>
+</div>>

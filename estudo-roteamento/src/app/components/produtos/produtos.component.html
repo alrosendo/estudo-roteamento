@@ -1,0 +1,42 @@
+<div class="container mt-3">
+  <div class="row">
+      <div class="col-6">
+        <input [(ngModel)]="cod" type="text" class="form-control mb-3" placeholder="Digite um codigo" >
+        <button [disabled]="!cod" class="btn btn-primary" (click)="irParaDetail()">Buscar</button>
+
+          <div *ngFor="let prod of produtos" class="card" style="width: 18rem;">
+               <img [src]="prod.imagem" src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">{{prod.nome}}</h5>
+                  <b>{{prod.preco}}</b>
+                   <p class="card-text">{{prod.descricao}}</p>
+                    <a routerLink ="/produtos/{{prod.cod}}" class="btn btn-primary">ver produto</a>
+              </div>
+          </div>
+      </div> 
+      <div class="col-6">
+        <div class="d-flex justify-content-around align-items-center">
+        <table class="table w-75 mt-5">
+          <thead>
+            <tr>
+              <th scope="col">cod.</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prod of produtos">
+              <td>{{prod.cod}}</td>
+              <td>{{prod.nome}}</td>
+              <td>{{prod.preco}}</td>
+              <td>
+                <a routerLink="/produtos/{{prod.cod}}" class="btn btn-primary btn-sm">ver mais</a>
+              </td>           
+          </tbody>
+        </table>
+        <router-outlet></router-outlet>
+      </div>
+      </div>
+  </div>
+</div>

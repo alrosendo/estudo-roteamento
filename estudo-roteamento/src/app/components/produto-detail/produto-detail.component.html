@@ -1,0 +1,19 @@
+<div class="container mt-3">
+<div *ngIf="!naoEncontrado; else containerNaoEncontrado">
+
+<div class="card" style="width: 18rem;">
+    
+        <div class="card-header">
+          Produto Nº {{produto?.cod}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{produto?.nome}}</h5>
+          <p class="card-text">{{produto?.descricao}}</p>
+          <a routerLink="../" class="btn btn-primary">Fechar</a>
+        </div>
+  </div>
+</div>
+<ng-template #containerNaoEncontrado>
+    <h2>Produto não econtrado!</h2>
+</ng-template>
+</div>
